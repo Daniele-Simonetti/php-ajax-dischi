@@ -14,10 +14,14 @@
   <!-- header -->
   <!-- includo il mio componente header -->
   <?php 
-    include_once __DIR__ . '/partials/header.php';
+  include_once __DIR__ . '/partials/header.php';
   ?>
 
   <!-- main -->
+  <!-- aggiungo i data su cui far girare il mio foreach -->
+  <?php 
+  include_once __DIR__ . '/server/data.php'; 
+  ?>
 
   <!-- footer -->
   <!-- includo il mio componente footer -->
