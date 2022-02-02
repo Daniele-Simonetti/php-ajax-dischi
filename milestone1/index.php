@@ -8,9 +8,17 @@
 </head>
 <body>
   <!-- header -->
+  <!-- includo il mio componente header -->
+  <?php 
+    include_once __DIR__ . '/partials/header.php';
+  ?>
 
   <!-- main -->
 
   <!-- footer -->
+  <!-- includo il mio componente footer -->
+  <?php 
+    include_once __DIR__ . '/partials/footer.php';
+  ?>
 </body>
 </html>
