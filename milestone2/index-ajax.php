@@ -23,12 +23,12 @@
   ?>
 
   <!-- main -->
-  <!-- aggiungo i data su cui far girare il mio foreach -->
   <?php 
   include_once __DIR__ . '/server/data.php'; 
   ?>
-  <main>
+  <main id="app">
     <div class="row row-col-5">
+      <?php include __DIR__ . '/partials/cards.php' ?>
     </div>
   </main>
 
