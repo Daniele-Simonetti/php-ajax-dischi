@@ -1,3 +1,8 @@
+html {
+  font-size: 100%;
+  font-family: 'Asap Condensed', sans-serif;
+}
+
 header {
   background-color: #2E3A46;
 }
@@ -13,3 +18,29 @@ footer div.copyright {
   padding: 0.5em 1em;
   color: white;
 }
+
+main {
+  background-color: #1E2D3B;
+  padding: 3em;
+  height: 100vh;
+}
+
+.card {
+  flex-basis: calc((100% / 5) - 2em);
+  margin: 1em;
+  background-color: #2E3A46;
+  padding: 1.1em;
+}
+
+.card h2 {
+  color: white;
+  text-transform: uppercase;
+}
+
+.card h3 {
+  color: gray;
+}
+
+.card h4 {
+  color: gray;
+} 
