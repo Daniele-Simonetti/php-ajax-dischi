@@ -16,17 +16,17 @@
   <title>spotify</title>
 </head>
 <body>
-  <!-- header -->
-  <!-- includo il mio componente header -->
-  <?php 
-  include_once __DIR__ . '/partials/header.php';
-  ?>
 
   <!-- main -->
   <?php 
   include_once __DIR__ . '/server/data.php'; 
   ?>
   <main id="app">
+    <!-- header -->
+    <!-- includo il mio componente header -->
+    <?php 
+    include_once __DIR__ . '/partials/header.php';
+    ?>
     <div class="row row-col-5">
       <div class="card col text-center" v-for="disc in discs">
         <img :src="disc.img" :alt="disc.title">
