@@ -8,8 +8,9 @@ const App = new Vue(
     created() {
       // faccio la chiamata ajax
       axios.get('http://localhost:8888/php-ajax-dischi/milestone2/server/controller.php?genre=all').then((result) => {
+        console.log(result.data.results);
         // popolo il mio dato così poi tramite vue riesco a stampare il mio dato in pagina
-        this.discs = result.data;
+        this.discs = result.data.results;
       }).catch((error) => {
         console.log(error);
       })
@@ -17,7 +18,13 @@ const App = new Vue(
     methods: {
       changeGenre() {
         console.log(this.textSearch);
-        axios.get().then().catch();
+        axios.get('http://localhost:8888/php-ajax-dischi/milestone2/server/controller.php?genre=' + this.textSearch)
+          .then((result) => {
+            this.discs = result.data.results;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       }
     }
   }

@@ -1,4 +1,4 @@
-<?php include_once __DIR__ . '/data.php';
+<?php include __DIR__ . '/data.php';
 header('Content-Type: application/json');
 
 $discsFiltered = $discs;
@@ -6,19 +6,25 @@ $discsFiltered = $discs;
 // faccio un check
 if (isset($_GET['genre']) !== false) {
   $genre = $_GET['genre'];
-  // se è uguale ad all restituisco tutto altrimenti niente
-  foreach ($discs as $key => $disc) {
-    # code...
-    if ($disc['genre' === $genre]) {
-      $discsFiltered[] = $disc;
+  if ($genre === 'all') {
+    $discsFiltered[] = $disc;
+  } else {
+    $discsFiltered = [];
+    foreach ($discs as  $disc) {
+      if ($disc['genre' === $genre]) {
+        $discsFiltered[] = $disc;
+      }
     }
   }
-
+  echo json_encode([
+    'results' => $discsFiltered,
+    'length' => count($discs)
+  ]); 
+} else {
+  echo json_encode([
+    'error' => 'genere non selezionato',
+  ]);
 }
 
-echo json_encode([
-  'results' => $discsFiltered,
-  'length' => count($discs)
-]); 
 
 ?>
