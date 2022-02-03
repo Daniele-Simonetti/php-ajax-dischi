@@ -8,7 +8,7 @@ const App = new Vue(
     created() {
       // faccio la chiamata ajax
       axios.get('http://localhost:8888/php-ajax-dischi/milestone2/server/controller.php?genre=all').then((result) => {
-        console.log(result.data.results);
+        console.log(result.data);
         // popolo il mio dato così poi tramite vue riesco a stampare il mio dato in pagina
         this.discs = result.data.results;
       }).catch((error) => {
